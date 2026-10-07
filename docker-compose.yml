@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres-alert-db
+
+    environment:
+      POSTGRES_DB: testdb
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: apppassword
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
